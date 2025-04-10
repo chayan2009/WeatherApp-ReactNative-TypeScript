@@ -5,7 +5,7 @@ const style = StyleSheet.create({
 
     container:{
         flex: 1,
-        backgroundColor: Colorss.accent,
+        backgroundColor: Colorss.primary,
         alignItems:'center',
         justifyContent:'center',
     },
@@ -13,6 +13,11 @@ const style = StyleSheet.create({
         fontSize:20,
         color:'#33333',
         fontWeight:'bold',
+    },
+    logo:{
+        width:250,
+        height:240,
+        marginBottom:30,
     },
 });
 export default style;
