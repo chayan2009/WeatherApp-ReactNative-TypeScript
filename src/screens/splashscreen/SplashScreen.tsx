@@ -1,12 +1,18 @@
 import React from 'react';
-import {Text, View} from 'react-native';
+import {Image, Text, View} from 'react-native';
 import style from './SplashScreen.styles';
 
 const SplashScreen = () => {
   return (
     <View style={style.container}>
-    <Text style={style.text}>Chayan</Text>
-  </View>
+      <Image
+        testID="image"
+        source={require('../../asset/cloudy.png')}
+        style={style.logo}
+        resizeMode="contain"
+      />
+      <Text style={style.text}>Welcome to Weather App</Text>
+    </View>
   );
 };
 export default SplashScreen;
