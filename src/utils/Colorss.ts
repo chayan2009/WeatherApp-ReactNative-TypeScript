@@ -1,12 +1,12 @@
 export const Colorss = {
-    primary: '#1E90FF',        // Dodger Blue
-    primaryDark: '#0057B7',     // Darker Blue
-    secondary: '#FFA500',       // Orange
-    accent: '#32CD32',          // Lime Green
-    background: '#FFFFFF',      // White
-    surface: '#F5F5F5',         // Light Grey Background
-    textPrimary: '#333333',     // Dark Text
-    textSecondary: '#777777',   // Muted Text
-    error: '#FF4C4C',           // Red
-    success: '#28A745',         // Green
+  primary: '#007AFF',
+  secondary: '#6c757d',
+  success: '#28a745',
+  danger: '#dc3545',
+  warning: '#ffc107',
+  info: '#17a2b8',
+  light: '#f8f9fa',
+  dark: '#343a40',
+  white: '#ffffff',
+  black: '#000000',
   };
