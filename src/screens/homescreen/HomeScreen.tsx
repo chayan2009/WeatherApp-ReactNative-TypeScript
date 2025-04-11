@@ -1,31 +1,37 @@
-import React, {useState} from 'react';
-import {View, Text, ActivityIndicator} from 'react-native';
-import {fetchWeatherByCity} from '../../services/weatherService';
-import WeatherData from '../../types/weatherData';
+import React, { useState, useCallback } from 'react';
+import { View, Text, ActivityIndicator } from 'react-native';
+import { fetchWeatherByCity } from '../../services/weatherService';
 import styles from './HomeScreen.styles';
 import GenericTextInput from '../../components/GenericTextInput';
 import GenericButton from '../../components/GenericButton';
 import WeatherScreen from '../../components/WeatherScreen';
+import useWeather from '../../context/useWeather';
 
 const HomeScreen: React.FC = () => {
   const [city, setCity] = useState('');
-  const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+  const { weatherData, setWeatherData } = useWeather();
 
-  const handleFetchWeather = async () => {
-    setLoading(true);
-    setError('');
-    try {
-      const data = await fetchWeatherByCity(city);
-      setWeatherData(data);
-    } catch (err) {
-      setError('City not found. Please try again!!!!!');
-      setWeatherData(null);
-    } finally {
-      setLoading(false);
-    }
-  };
+  const handleFetchWeather = useCallback(
+    async (cityName?: string) => {
+      const searchCity = cityName || city;
+      if (!searchCity) return;
+
+      setLoading(true);
+      setError('');
+      try {
+        const data = await fetchWeatherByCity(searchCity);
+        setWeatherData(data);
+      } catch (err) {
+        setError('City not found. Please try again!');
+        setWeatherData(null);
+      } finally {
+        setLoading(false);
+      }
+    },
+    [city, setWeatherData]
+  );
 
   return (
     <View style={styles.container}>
@@ -37,7 +43,7 @@ const HomeScreen: React.FC = () => {
         value={city}
         onChangeText={setCity}
       />
-      <GenericButton title="Get Weather" onPress={handleFetchWeather} />
+      <GenericButton title="Get Weather" onPress={() => handleFetchWeather()} />
       {loading && <ActivityIndicator size="large" color="#0000ff" />}
       {error !== '' && (
         <View style={styles.errorContainer}>
