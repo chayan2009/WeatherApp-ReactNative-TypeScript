@@ -19,5 +19,9 @@ const style = StyleSheet.create({
         height:240,
         marginBottom:30,
     },
+    safeArea:{
+        flex: 1,
+        backgroundColor: Colorss.primary,
+    },
 });
 export default style;

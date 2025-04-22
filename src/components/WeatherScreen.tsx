@@ -14,6 +14,7 @@ const WeatherScreen: React.FC<Props> = ({ weatherData }) => {
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <WeatherCard data={weatherData} />
+
       <View style={styles.infoRow}>
         <WeatherCard title="Feels Like" value={`${main.feels_like}${UNITS.CELSIUS}`} />
         <WeatherCard title="Humidity" value={`${main.humidity}${UNITS.PERCENT}`} />

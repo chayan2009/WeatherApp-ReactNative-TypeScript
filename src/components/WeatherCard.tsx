@@ -12,13 +12,11 @@ const WeatherCard: React.FC<WeatherCardProps> = (props) => {
     const iconUrl = `https://openweathermap.org/img/wn/${weather[0].icon}@2x.png`;
 
     return (
-      <View>
-        <View style={styles.card}>
+      <View style={styles.card}>
         <Text style={styles.city}>{name}, {sys.country}</Text>
         <Image source={{ uri: iconUrl }} style={styles.icon} />
         <Text style={styles.temp}>{main.temp}°C</Text>
         <Text style={styles.description}>{weather[0].description}</Text>
-      </View>
       </View>
     );
   }

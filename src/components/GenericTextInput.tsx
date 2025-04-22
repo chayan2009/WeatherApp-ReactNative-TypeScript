@@ -17,11 +17,11 @@ const GenericTextInput: React.FC<GenericTextInputProps> = ({
   return (
     <View style={styles.container}>
       <TextInput
+        style={styles.input}
         placeholder={placeholder}
+        placeholderTextColor="#888"
         value={value}
         onChangeText={onChangeText}
-        style={styles.input}
-        placeholderTextColor="#888"
         {...rest}
       />
     </View>

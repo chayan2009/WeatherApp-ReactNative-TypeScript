@@ -1,20 +1,24 @@
-import React, {useEffect} from 'react';
-import {Image, Text, View} from 'react-native';
+import React, { useEffect } from 'react';
+import { Image, SafeAreaView, Text, View } from 'react-native';
 import style from './SplashScreen.styles';
-import {useNavigation} from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { RootStackParameterList } from '../navigation/types';
+import { SPLASH_SCREEN_TIMEOUT } from '../../utils/constants';
+import { RootStackParamList } from '../navigation/navigation';
 
-const SplashScreen = () => {
-  const navigation = useNavigation<NativeStackNavigationProp<RootStackParameterList>>();
+type SplashScreenProps = {
+  navigation: NativeStackNavigationProp<RootStackParamList, 'Splash'>;
+};
+
+const SplashScreen: React.FC<SplashScreenProps> = ({ navigation }) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       navigation.navigate('Home');
-    }, 3000);
+    }, SPLASH_SCREEN_TIMEOUT);
     return () => clearTimeout(timer);
   }, [navigation]);
 
   return (
+    <SafeAreaView style={style.safeArea}>
     <View style={style.container}>
       <Image
         testID="image"
@@ -24,6 +28,8 @@ const SplashScreen = () => {
       />
       <Text style={style.text}>Welcome to Weather App</Text>
     </View>
+    </SafeAreaView>
   );
 };
+
 export default SplashScreen;

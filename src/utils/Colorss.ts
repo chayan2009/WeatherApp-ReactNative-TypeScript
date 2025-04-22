@@ -9,4 +9,5 @@ export const Colorss = {
   dark: '#343a40',
   white: '#ffffff',
   black: '#000000',
-  };
+  disabled: '#BDBDBD',
+};

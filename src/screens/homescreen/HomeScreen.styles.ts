@@ -21,17 +21,29 @@ const homeStyle = StyleSheet.create({
     marginTop: 20,
   },
   toolbar: {
+    flexDirection:'row',
     backgroundColor: '#1976D2',
     paddingVertical: 15,
     paddingHorizontal: 20,
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'space-between',
     borderBottomColor: '#ccc',
     borderBottomWidth: 1,
   },
   toolbarTitle: {
     color: 'white',
     fontSize: 20,
+    fontWeight: 'bold',
+  },
+  toggleButton: {
+    paddingVertical: 6,
+    paddingHorizontal: 10,
+    backgroundColor: '#ffffff',
+    borderRadius: 12,
+  },
+  toggleText: {
+    fontSize: 12,
+    color: '#1976D2',
     fontWeight: 'bold',
   },
 });
