@@ -1,16 +1,16 @@
 ## 🧱 Architecture Overview
 
 ```sh
-TypeScript | Strong typing support for React Native
-Redux Toolkit | Global state management with slice-based structure
-Redux Persist | Persistent Redux store across app restarts
-React Context API | Lightweight state sharing across feature modules
-Custom Hooks | Reusable logic like debounced search, weather formatting
-Axios | For API requests to external weather service
-React Navigation (v6) | Stack & tab navigation setup
-AsyncStorage | Used with Redux Persist for local state
-ESLint + Prettier | Code linting and formatting
-Modular Folder Structure | Feature-based separation with screens, hooks, services, components, etc.
+TypeScript ---- Strong typing support for React Native
+Redux Toolkit ---- Global state management with slice-based structure
+Redux Persist ---- Persistent Redux store across app restarts
+React Context API ---- Lightweight state sharing across feature modules
+Custom Hooks ---- Reusable logic like debounced search, weather formatting
+Axios ---- For API requests to external weather service
+React Navigation (v6) ---- Stack & tab navigation setup
+AsyncStorage ----- Used with Redux Persist for local state
+ESLint + Prettier ----- Code linting and formatting
+Modular Folder Structure ----- Feature-based separation with screens, hooks, services, components, etc.
 ```
 This app follows a **modular clean architecture** pattern and includes the following core components:
 
