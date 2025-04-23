@@ -1,3 +1,19 @@
+## 🧱 Architecture Overview
+
+```sh
+TypeScript | Strong typing support for React Native
+Redux Toolkit | Global state management with slice-based structure
+Redux Persist | Persistent Redux store across app restarts
+React Context API | Lightweight state sharing across feature modules
+Custom Hooks | Reusable logic like debounced search, weather formatting
+Axios | For API requests to external weather service
+React Navigation (v6) | Stack & tab navigation setup
+AsyncStorage | Used with Redux Persist for local state
+ESLint + Prettier | Code linting and formatting
+Modular Folder Structure | Feature-based separation with screens, hooks, services, components, etc.
+```
+This app follows a **modular clean architecture** pattern and includes the following core components:
+
 This is a new [**Reac![Screenshot_1744407694](https://github.com/user-attachments/assets/01ae9083-49d2-456a-a5d4-0202ebabc245)
 t Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 ![Screenshot_1744407690](https://github.com/user-attachments/assets/a105ecdb-a3cf-43f9-ac24-60bd127289a7)
